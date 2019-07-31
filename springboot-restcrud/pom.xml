@@ -35,18 +35,19 @@
     </properties>
 
     <dependencies>
+        <!--使用@Slf4j注解必须导入此依赖-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
             <!--默认 2.1.6版本,如果想用3版本,需要在上面切换版本-->
         </dependency>
 
-        <!--引入web模块-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
+        <!--导入jdbc 数据源依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -65,12 +66,18 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <!--引入web模块-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--引入jquery-webjars依赖,可以以jar的方式访问静态资源
             静态资源规则:访问路径是classpath:/META-INF/resources/下找资源-->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
-            <version>3.3.1-1</version>
+            <version>3.3.1</version>
         </dependency>
 
         <!--导入bootstrap的webjars依赖,通过jar的方式访问-->
@@ -93,7 +100,6 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
 
 
     </dependencies>

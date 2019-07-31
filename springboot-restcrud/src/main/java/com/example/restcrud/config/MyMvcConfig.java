@@ -3,14 +3,13 @@ package com.example.restcrud.config;
 import com.example.restcrud.component.LoginHandlerInterceptor;
 import com.example.restcrud.component.MyLocalResolver;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 //使用WebMvcConfigurerAdapter可以来扩展SpringMvc的功能
-@Configuration
+//@Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
