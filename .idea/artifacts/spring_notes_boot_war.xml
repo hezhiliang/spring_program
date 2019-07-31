@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-notes-boot:war">
+    <output-path>$PROJECT_DIR$/spring-notes/codes/boot/target</output-path>
+    <root id="archive" name="spring-notes-boot-1.0.1.war">
+      <element id="artifact" artifact-name="spring-notes-boot:war exploded" />
+    </root>
+  </artifact>
+</component>

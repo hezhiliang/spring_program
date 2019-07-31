@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.TRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.Bean.TRolePermission">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="roleid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="permissionid" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+
+
+
+  <!--int insertPermission(@Param("permission_ids") List&amp;amp;lt;Integer&amp;amp;gt; permission_ids, @Param("roleid") Integer roleid);-->
+  <insert id="insertPermission">
+    INSERT into t_role_permission(roleid,permissionid)
+    VALUES
+    <foreach collection="permission_ids" item="permissionIds" separator=",">
+      (#{roleid},#{permissionIds})
+    </foreach>
+  </insert>
+</mapper>

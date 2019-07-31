@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.TUsersMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.Bean.TUsers">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="username" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="fix_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="iphone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="fg_userid" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="identity_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createtime" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="update_time" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="permission_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AjcSettings">
+    <option name="ajcPath" value="$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.1/aspectjtools-1.8.1.jar" />
+    <option name="delegateToJavac" value="true" />
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="ajc" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
+        <module name="lambda" />
+        <module name="spring-demo" />
+        <module name="spring-demo2" />
+        <module name="spring-notes-boot" />
+        <module name="spring-notes-core-aop" />
+        <module name="spring-notes-core-ioc" />
+        <module name="spring-notes-core-validator" />
+        <module name="spring-notes-data-orm" />
+        <module name="spring-notes-example-helolworld" />
+        <module name="spring-notes-integration-api" />
+        <module name="spring-notes-integration-cache" />
+        <module name="spring-notes-integration-libs" />
+        <module name="spring-notes-integration-rmi-client" />
+        <module name="spring-notes-integration-rmi-server" />
+        <module name="spring-notes-integration-rpc-api" />
+        <module name="spring-notes-integration-rpc-consumer" />
+        <module name="spring-notes-integration-rpc-provider" />
+        <module name="spring-notes-integration-scheduler" />
+        <module name="spring-notes-security-shiro" />
+        <module name="spring-notes-web-mvc" />
+        <module name="spring-notes-websocket" />
+        <module name="springboot-restcrud" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="lambda" target="1.8" />
+      <module name="spring-demo" target="1.8" />
+      <module name="spring-demo2" target="1.8" />
+      <module name="spring-notes" target="1.8" />
+      <module name="spring-notes-boot" target="1.8" />
+      <module name="spring-notes-core" target="1.8" />
+      <module name="spring-notes-core-aop" target="1.8" />
+      <module name="spring-notes-core-ioc" target="1.8" />
+      <module name="spring-notes-core-validator" target="1.8" />
+      <module name="spring-notes-data" target="1.8" />
+      <module name="spring-notes-data-jdbc" target="1.8" />
+      <module name="spring-notes-data-orm" target="1.8" />
+      <module name="spring-notes-example" target="1.8" />
+      <module name="spring-notes-example-helolworld" target="1.8" />
+      <module name="spring-notes-integration" target="1.8" />
+      <module name="spring-notes-integration-api" target="1.8" />
+      <module name="spring-notes-integration-cache" target="1.8" />
+      <module name="spring-notes-integration-libs" target="1.8" />
+      <module name="spring-notes-integration-rmi" target="1.8" />
+      <module name="spring-notes-integration-rmi-client" target="1.8" />
+      <module name="spring-notes-integration-rmi-server" target="1.8" />
+      <module name="spring-notes-integration-rpc" target="1.8" />
+      <module name="spring-notes-integration-rpc-api" target="1.8" />
+      <module name="spring-notes-integration-rpc-consumer" target="1.8" />
+      <module name="spring-notes-integration-rpc-provider" target="1.8" />
+      <module name="spring-notes-integration-scheduler" target="1.8" />
+      <module name="spring-notes-parent" target="1.8" />
+      <module name="spring-notes-security" target="1.8" />
+      <module name="spring-notes-security-shiro" target="1.8" />
+      <module name="spring-notes-web" target="1.8" />
+      <module name="spring-notes-web-mvc" target="1.8" />
+      <module name="spring-notes-websocket" target="1.8" />
+      <module name="springboot-rabbit-consume" target="1.8" />
+      <module name="springboot-restcrud" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

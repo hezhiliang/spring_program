@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example2.demo2.dao.EmployeesMapper">
+  <resultMap id="BaseResultMap" type="com.example2.demo2.bean.Employees">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <constructor>
+      <idArg column="employee_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="first_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="last_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="phone_number" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="job_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="salary" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="commission_pct" javaType="java.lang.Double" jdbcType="DOUBLE" />
+      <arg column="manager_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="department_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+</mapper>
