@@ -8,21 +8,23 @@
     <meta name="author" content="">
     <title>Signin Template for Bootstrap</title>
     <!-- Bootstrap core CSS -->
-    <link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.1.1/css/bootstrap.css}" rel="stylesheet">
+    <link href="asserts/css/bootstrap.min.css" th:href="@{/asserts/css/bootstrap.min.css}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="asserts/css/signin.css" th:href="@{/asserts/css/signin.css}" rel="stylesheet">
 </head>
 
 <body class="text-center">
 <form class="form-signin" action="dashboard.html" th:action="@{/user/login}" method="post"><!--th:action 表单提交-->
-    <!--th:src 和th:href 的区别:前者不会携带路径名,后者会携带路径名
+    <!--th:src 和 th:href 的区别:前者不会携带路径名,后者会携带路径名
     如:	th:src  	http://localhost:8080/crud/asserts/img/bootstrap-solid.svg
         th:href 	http://localhost:8080/crud/user/asserts/img/bootstrap-solid.svg-->
     <img class="mb-4" th:src="@{/asserts/img/bootstrap-solid.svg}" src="asserts/img/bootstrap-solid.svg" alt=""
          width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
     <!--判断,显示错误消息 只有th:if 的条件判断生效了,这个<p>标签才会生效显示出来-->
+    <!--th:if 作用于 th:unless 相反-->
     <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <!--<p style="color: red" th:text="${msg}" th:unless="${#strings.isEmpty(msg)}"></p>-->
     <label class="sr-only" th:text="#{login.username}">Username</label>
     <!--th:placeholder占位符-->
     <input type="text" name="username" class="form-control" th:placeholder="#{login.username}" placeholder="Username"

@@ -9,6 +9,11 @@ spring:
   ##配置国际化基础名basename,不配置的话默认扫描的是 messages.properties 配置文件
   messages:
     basename: i18n.login
+  ##禁用缓存
+  thymeleaf:
+    cache: false
+
+
 ##设置项目路径
 server:
   context-path: /crud
