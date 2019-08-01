@@ -5,6 +5,13 @@ spring:
     url: jdbc:mysql//localhost:3306/test
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+
+  ##配置国际化基础名basename,不配置的话默认扫描的是 messages.properties 配置文件
+  messages:
+    basename: i18n.login
+##设置项目路径
+server:
+  context-path: /crud
+
 #  resources:
 #    static-locations: classpath:/hello/,classpath:/test
-

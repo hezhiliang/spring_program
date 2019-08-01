@@ -27,11 +27,12 @@
     <!--th:placeholder占位符-->
     <input type="text" name="username" class="form-control" th:placeholder="#{login.username}" placeholder="Username"
            required="" autofocus="">
-    <label class="sr-only" th:text="#{login.Password}">Password</label>
-    <input type="password" name="password" class="form-control" th:placeholder="#{login.Password}"
+    <label class="sr-only" th:text="#{login.password}">Password</label>
+    <input type="password" name="password" class="form-control" th:placeholder="#{login.password}"
            placeholder="Password" required="">
     <div class="checkbox mb-3">
         <label>
+            <!--input框不能用 th:text写法，因为input框是一个字节数不是修改文本内容，所以这里使用双大括号的行内写法来表示-->
             <input type="checkbox" value="remember-me"> [[#{login.remember}]]
         </label>
     </div>

@@ -5,11 +5,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //@RunWith(SpringRunner.class)
 @Slf4j
@@ -27,6 +25,24 @@ public class SpringbootRestcrudApplicationTests {
 //		System.out.println(connection);
 //		connection.close();
 //	}
+
+    /**
+     * StringUtils.trimAllWhitespace(String str)  去掉str 的所有空格
+     * StringUtils.commaDelimitedListToStringArray(String str) 将逗号分隔的str转化为到StringArray数组
+     * StringUtils.collectionToCommaDelimitedString(Collection<?> coll)  将逗号分隔的集合转换为逗号分隔的字符串
+     */
+    @Test
+    public void test02(){
+        String basename = "  me s sa ge ,messa ge1,messag e2";
+        String trimAllWhitespace = StringUtils.trimAllWhitespace(basename);
+        System.out.println(trimAllWhitespace);
+        String[] strings = StringUtils.commaDelimitedListToStringArray(trimAllWhitespace);
+        for (String string : strings) {
+            System.out.println(string);
+        }
+        String collectionToCommaDelimitedString = StringUtils.collectionToCommaDelimitedString(Arrays.asList(strings));
+        System.out.println(collectionToCommaDelimitedString);
+    }
 
     //记录器
     Logger logger = LoggerFactory.getLogger(getClass());
@@ -100,5 +116,8 @@ public class SpringbootRestcrudApplicationTests {
         System.out.println(list);
 //        list.add("3");//如果再次添加就会报异常： java.lang.UnsupportedOperationException
     }
+
+
+
 
 }

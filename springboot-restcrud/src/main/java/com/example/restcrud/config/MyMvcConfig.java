@@ -1,17 +1,17 @@
 package com.example.restcrud.config;
 
-import com.example.restcrud.component.LoginHandlerInterceptor;
 import com.example.restcrud.component.MyLocalResolver;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+//@EnableWebMvc //全面接管SpringMvc  会导致：SpringBoot对SpringMVC的自动配置都失效,只有SprinMvc的基本配置。所有不使用该注解
 //使用WebMvcConfigurerAdapter可以来扩展SpringMvc的功能
-//@Configuration
+@Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
-    @Override
+    @Override //重写视图解析器，拓展视图解析器功能
     public void addViewControllers(ViewControllerRegistry registry) {
 //        super.addViewControllers(registry);
         //浏览器发送/testurl请求来到success
@@ -25,24 +25,27 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
      * @return
      */
     @Bean //将这个组件注册到容器中
+    //所有的 WebMvcConfigurerAdapter 组件都会一起起作用
     public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
         WebMvcConfigurerAdapter adapter = new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("login");
+                registry.addViewController("/login").setViewName("login");
+                registry.addViewController("/index").setViewName("login");
                 registry.addViewController("/login.html").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
-                registry.addViewController("/main.html").setViewName("dashboard");//首页
+//                registry.addViewController("/main.html").setViewName("dashboard");//首页
             }
 
-            @Override
-            public void addInterceptors(InterceptorRegistry registry) {
-
-                //        以前在eclipse中是需要配置静态资源的拦截器的,现在springboot已经帮我们做好了,所以不用写.
-                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                        .excludePathPatterns("/", "/login.html", "/index.html", "/user/login");
-//                super.addInterceptors(registry);
-            }
+//            @Override
+//            public void addInterceptors(InterceptorRegistry registry) {
+//
+//                //        以前在eclipse中是需要配置静态资源的拦截器的,现在springboot已经帮我们做好了,所以不用写.
+//                registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                        .excludePathPatterns("/", "/login.html", "/index.html", "/user/login");
+////                super.addInterceptors(registry);
+//            }
 
         };
         return adapter;

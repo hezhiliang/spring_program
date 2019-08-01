@@ -27,24 +27,24 @@
         <druid.version>1.0.28</druid.version>
         <mysql-connector.version>5.1.39</mysql-connector.version>
 
-        <!--切换thymeleaf版本-->
-        <thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
-        <!--布局功能的支持程序 thymeleaf3主程序 layout2以上版本 -->
-        <!--thymeleaf2 layout1-->
-        <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
+        <!--设置thymeleaf主程序版本 为3-->
+        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
+        <!--设置布局功能的支持程序版本号 thymeleaf3主程序必须和layout2以上版本配合 -->
+        <thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
     </properties>
 
     <dependencies>
         <!--使用@Slf4j注解必须导入此依赖-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <!--默认 2.1.6版本,如果想用3版本,需要在上面切换版本-->
+        </dependency>
+
+        <!--导入 thymeleaf 依赖-->
+        <!--默认 2.1.6版本,如果想用3版本,需要在上面切换版本-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <!--导入jdbc 数据源依赖-->
