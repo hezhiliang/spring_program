@@ -22,7 +22,7 @@
          width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
     <!--判断,显示错误消息 只有th:if 的条件判断生效了,这个<p>标签才会生效显示出来-->
-    <!--th:if 作用于 th:unless 相反-->
+    <!--th:if 作用于 th:unless 相反; #strings 是thymeleaf语法内置工具类-->
     <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
     <!--<p style="color: red" th:text="${msg}" th:unless="${#strings.isEmpty(msg)}"></p>-->
     <label class="sr-only" th:text="#{login.username}">Username</label>

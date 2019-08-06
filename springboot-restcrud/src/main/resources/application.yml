@@ -9,10 +9,12 @@ spring:
   ##配置国际化基础名basename,不配置的话默认扫描的是 messages.properties 配置文件
   messages:
     basename: i18n.login
-  ##禁用缓存
+  ##禁用thymeleaf缓存,默认是true。开发环境需要经常调试html页面，建议禁用，禁用后按Ctrl+F9可以重新编译html页面，不需要重启服务。
   thymeleaf:
     cache: false
-
+  # 设置日期转换格式
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
 
 ##设置项目路径
 server:

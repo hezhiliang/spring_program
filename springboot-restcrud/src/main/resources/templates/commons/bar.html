@@ -22,8 +22,9 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
+                <!--class 元素里的属性 active 是高亮显示-->
                 <a class="nav-link active" href="#" th:href="@{/main.html}"
-                    th:class="${activeUri=='main.html'?'nav-link active':'nav-link'}">
+                    th:class="${activeUri=='main.html'?'nav-link active':'nav-link'}"> <!--使用三元表达式，判断当前uri是否被选中，选中就替换class元素值高亮显示-->
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="feather feather-home">

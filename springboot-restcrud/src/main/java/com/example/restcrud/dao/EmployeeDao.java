@@ -16,7 +16,8 @@ public class EmployeeDao {
 	
 	@Autowired
 	private DepartmentDao departmentDao;
-	
+
+	//静态域，启动初始化员工数据
 	static{
 		employees = new HashMap<Integer, Employee>();
 
@@ -35,7 +36,7 @@ public class EmployeeDao {
 		}
 		
 		employee.setDepartment(departmentDao.getDepartment(employee.getDepartment().getId()));
-		employees.put(employee.getId(), employee);
+		employees.put(employee.getId(), employee);//在静态域中更新或添加数据
 	}
 	
 	public Collection<Employee> getAll(){
