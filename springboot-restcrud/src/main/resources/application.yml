@@ -16,9 +16,12 @@ spring:
   mvc:
     date-format: yyyy-MM-dd HH:mm:ss
 
-##设置项目路径
+##修改 Servle 相关配置:
 server:
-  context-path: /crud
+  context-path: /crud #设置项目路径
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
 
 #  resources:
 #    static-locations: classpath:/hello/,classpath:/test
