@@ -1,11 +1,9 @@
 package com.example.restcrud.config;
 
-import com.example.restcrud.component.LoginHandlerInterceptor;
 import com.example.restcrud.component.MyLocalResolver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -31,23 +29,26 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     //所有的 WebMvcConfigurerAdapter 组件都会一起起作用
     public WebMvcConfigurerAdapter webMvcConfigurerAdapter() {
         WebMvcConfigurerAdapter adapter = new WebMvcConfigurerAdapter() {
+            //注册视图解析器
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
+//                super.addViewControllers(registry);
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/login.html").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
                 registry.addViewController("/main.html").setViewName("dashboard");//首页
             }
 
-            @Override
-            public void addInterceptors(InterceptorRegistry registry) {
+            //注册拦截器
+//            @Override
+//            public void addInterceptors(InterceptorRegistry registry) {
 //                super.addInterceptors(registry);
-                //以前在eclipse中是需要配置静态资源的拦截器的,现在springboot已经帮我们做好了,所以不用写.
-                registry.addInterceptor(new LoginHandlerInterceptor())
-                        .addPathPatterns("/**")//拦截任意多层路径下的任意请求
-                        .excludePathPatterns("/", "/login.html", "/index.html", "/user/login");//排除访问登录页面的请求
+//                registry.addInterceptor(new LoginHandlerInterceptor())
+//                        .addPathPatterns("/**")//拦截任意多层路径下的任意请求
+//                        .excludePathPatterns("/", "/login.html", "/index.html", "/user/login");//排除访问登录页面的请求
 
-            }
+                //另外,以前在eclipse中是需要配置静态资源的拦截器的,现在springboot已经帮我们做好了,所以不用写.
+//            }
 
         };
         return adapter;
@@ -57,7 +58,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
      * 注入自定义的区域信息解析器组件
      * 需要把resolveLocale注入容器中,替换默认的resolveLocale
      */
-    @Bean //将方法名作为容器的id注入容器
+    @Bean //将方法名'localeResolver'作为容器的id注入容器,替换默认的localeResolver
     public LocaleResolver localeResolver() {
         return new MyLocalResolver();
     }
