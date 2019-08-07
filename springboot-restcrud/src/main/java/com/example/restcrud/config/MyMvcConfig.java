@@ -1,8 +1,6 @@
 package com.example.restcrud.config;
 
 import com.example.restcrud.component.MyLocalResolver;
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -13,23 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //使用WebMvcConfigurerAdapter可以来扩展SpringMvc的功能
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
-
-   /**
-    * @Author: hzl
-    * @Description:  编写一个EmbeddedServletContainerCustomizer：嵌入式的Servlet容器的定制器；来修改Servlet容器的配置
-    * @Date: Create in 2019-08-05
-    * @Modified By:
-    */
-    @Bean //把 EmbeddedServletContainerCustomizer 组件注入Spring容器
-    public EmbeddedServletContainerCustomizer embeddedServletContainerCustomizer(){
-        return new EmbeddedServletContainerCustomizer(){
-            @Override
-            public void customize(ConfigurableEmbeddedServletContainer container) {
-                container.setPort(8081);
-                container.setContextPath("/crud");
-            }
-        };
-    }
 
 
     @Override //重写视图解析器，拓展视图解析器功能

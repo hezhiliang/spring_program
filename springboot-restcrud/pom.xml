@@ -70,7 +70,28 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!--<exclusions>-->
+                <!--&lt;!&ndash;排除 tomcat,替换为其他嵌入式Servlet容器&ndash;&gt;-->
+                <!--<exclusion>-->
+                    <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+                    <!--<groupId>org.springframework.boot</groupId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         </dependency>
+
+        <!--引入 jetty(适用于长连接开发) 嵌入式Servlet容器 依赖-->
+        <!--<dependency>-->
+            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+        <!--</dependency>-->
+        <!--2019-08-06 15:36:52.449  INFO 17060  [           main] b.c.e.u.UndertowEmbeddedServletContainer : jetty started on port(s) 8080 (http)-->
+
+        <!--引入 undertow(适用于高并发环境，不支持Jsp) 嵌入式Servlet容器 依赖-->
+        <!--<dependency>-->
+            <!--<artifactId>spring-boot-starter-undertow</artifactId>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+        <!--</dependency>-->
+        <!--2019-08-06 15:36:52.449  INFO 17060  [           main] b.c.e.u.UndertowEmbeddedServletContainer : Undertow started on port(s) 8080 (http)-->
 
         <!--引入jquery-webjars依赖,可以以jar的方式访问静态资源
             静态资源规则:访问路径是classpath:/META-INF/resources/下找资源-->
