@@ -1,12 +1,29 @@
 spring:
   datasource:
-    username: root
-    password: root
-    url: jdbc:mysql//localhost:3306/test
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+#      username: root
+#      password: root
+      url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&transformedBitIsBoolean=true&useSSL=false&serverTimezone=UTC
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
-  ##配置国际化基础名basename,不配置的话默认扫描的是 messages.properties 配置文件
+  #配置国际化基础名basename,不配置的话默认扫描的是 messages.properties 配置文件
   messages:
     basename: i18n.login
   ##禁用thymeleaf缓存,默认是true。开发环境需要经常调试html页面，建议禁用，禁用后按Ctrl+F9可以重新编译html页面，不需要重启服务。
