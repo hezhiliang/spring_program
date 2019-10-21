@@ -1,4 +1,4 @@
-package com.example.restcrud.component;
+package com.example.restcrud.component.interceptor;
 
 
 import org.springframework.web.servlet.HandlerInterceptor;
