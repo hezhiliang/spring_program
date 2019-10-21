@@ -105,6 +105,16 @@ public class CheckSumUtil {
         //method=genChecksum2,checksum=aef210c0d84239a2fded24ea45a6d410404aab32ef7f5741eb9bbd957606ddd8
         //method=genChecksum3,checksum=aef210c0d84239a2fded24ea45a6d410404aab32ef7f5741eb9bbd957606ddd8
 
+        //采用SHA-512计算checksum
+        //method=genChecksum1,checksum=4f116d6d34e7d34f53f52756226bf763d70dd3e13f7927b3f09747d78e01e31da01d62a4423146b4fcc85d9df85d5f1a78ef6cded83e744323cb6099e5c75d9b
+        //method=genChecksum2,checksum=4f116d6d34e7d34f53f52756226bf763d70dd3e13f7927b3f09747d78e01e31da01d62a4423146b4fcc85d9df85d5f1a78ef6cded83e744323cb6099e5c75d9b
+        //method=genChecksum3,checksum=4f116d6d34e7d34f53f52756226bf763d70dd3e13f7927b3f09747d78e01e31da01d62a4423146b4fcc85d9df85d5f1a78ef6cded83e744323cb6099e5c75d9b
+        //
+        //采用SHA1计算checksum
+        //method=genChecksum1,checksum=0556867d09b1832fc50c17a05d447f28f0488637
+        //method=genChecksum2,checksum=0556867d09b1832fc50c17a05d447f28f0488637
+        //method=genChecksum3,checksum=0556867d09b1832fc50c17a05d447f28f0488637
+
     }
 
 }
